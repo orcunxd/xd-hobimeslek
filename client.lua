@@ -19,7 +19,7 @@ Citizen.CreateThread(function()
             if dst2 < 1 then
                 if IsControlJustReleased(0, 38) then
                     sonKarpuz = math.random(1, #Config.KarpuzToplama)
-                    Karpuztopla()
+                    KarpuzTopla()
                 end
             end
         end
