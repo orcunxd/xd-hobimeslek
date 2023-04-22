@@ -12,3 +12,4 @@ You need to add the following items to the "qb-core\shared\items.lua" folder.
 
 	["portakal"] 				 = {["name"] = "portakal",  	     		["label"] = "Portakal",	 		["weight"] = 200, 		["type"] = "item", 		["image"] = "orange.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   	["combinable"] = nil,   ["description"] = "Portakal." ,['created'] = nil, ['decay'] = 14.0},	
 	["portakalsuyu"] 			 = {["name"] = "portakalsuyu",  	   		["label"] = "Portakal Suyu",	["weight"] = 200, 		["type"] = "item", 		["image"] = "orange.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   	["combinable"] = nil,   ["description"] = "Portakalın Taptaze Suyu." ,['created'] = nil, ['decay'] = 14.0},
+
