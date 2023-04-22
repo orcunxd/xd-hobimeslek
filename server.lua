@@ -62,3 +62,66 @@ AddEventHandler("xdPortakalSatis", function()
         TriggerClientEvent('QBCore:Notify', source, { type = 'error', text = 'Yeterince portakal suyun yok!', length = 2500})
     end
 end)
+
+-- Mandalin
+RegisterNetEvent("xdMandalinToplama")
+AddEventHandler("xdMandalinToplama", function()
+    local xPlayer = QBCore.Functions.GetPlayer(source)
+    xPlayer.Functions.AddItem("mandalin", math.random(Config.MeslekMin,Config.MeslekMax))
+end)
+
+RegisterNetEvent("xdMandalinIsleme")
+AddEventHandler("xdMandalinIsleme", function()
+    local xPlayer = QBCore.Functions.GetPlayer(source)
+    local item = math.random(1,100)
+    if xPlayer.Functions.RemoveItem("mandalin", Config.MandalinIslemeMiktar) then
+            xPlayer.Functions.AddItem("mandalinsuyu", 1)
+        TriggerClientEvent('QBCore:Notify', source, { type = 'success', text = 'Mandalinin suyunu sıktın!', length = 2500})
+    else
+        TriggerClientEvent('QBCore:Notify', source, { type = 'error', text = 'Yeterince mandalinin yok!', length = 2500})
+    end
+end)
+
+RegisterNetEvent("xdMandalinSatis")
+AddEventHandler("xdMandalinSatis", function()
+    local xPlayer = QBCore.Functions.GetPlayer(source)
+
+    if xPlayer.Functions.RemoveItem("mandalinsuyu", Config.MandalinsatisMiktar) then
+        xPlayer.Functions.AddMoney(Config.MeslekOdeme, Config.MandalinFiyat)
+        TriggerClientEvent('QBCore:Notify', source, { type = 'success', text = 'Mandalin suyunu sattın!', length = 2500})
+    else
+        TriggerClientEvent('QBCore:Notify', source, { type = 'error', text = 'Yeterince mandalin suyun yok!', length = 2500})
+    end
+end)
+
+
+-- Bal
+RegisterNetEvent("xdBalToplama")
+AddEventHandler("xdBalToplama", function()
+    local xPlayer = QBCore.Functions.GetPlayer(source)
+    xPlayer.Functions.AddItem("Bal", math.random(Config.MeslekMin,Config.MeslekMax))
+end)
+
+RegisterNetEvent("xdBalIsleme")
+AddEventHandler("xdBalIsleme", function()
+    local xPlayer = QBCore.Functions.GetPlayer(source)
+    local item = math.random(1,100)
+    if xPlayer.Functions.RemoveItem("bal", Config.BalIslemeMiktar) then
+            xPlayer.Functions.AddItem("kavanozbal", 1)
+        TriggerClientEvent('QBCore:Notify', source, { type = 'success', text = 'Balı kavanozladın', length = 2500})
+    else
+        TriggerClientEvent('QBCore:Notify', source, { type = 'error', text = 'Yeterince balın yok!', length = 2500})
+    end
+end)
+
+RegisterNetEvent("xdBalSatis")
+AddEventHandler("xdBalSatis", function()
+    local xPlayer = QBCore.Functions.GetPlayer(source)
+
+    if xPlayer.Functions.RemoveItem("kavanozbal", Config.BalsatisMiktar) then
+        xPlayer.Functions.AddMoney(Config.MeslekOdeme, Config.BalFiyat)
+        TriggerClientEvent('QBCore:Notify', source, { type = 'success', text = 'Kavanoz balı sattın!', length = 2500})
+    else
+        TriggerClientEvent('QBCore:Notify', source, { type = 'error', text = 'Yeterince kavanoz balın yok!', length = 2500})
+    end
+end)
