@@ -824,3 +824,4 @@ Citizen.CreateThread(function()
     SetEntityInvincible(npc, true)
     FreezeEntityPosition(npc, true)
 end)
+
